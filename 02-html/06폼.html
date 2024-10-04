@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>form | html</title>
+    </head>
+    <body>
+        <h1>html</h1>
+        <h2>form</h2>
+        <form action="/action_page.php">
+            <fieldst>
+                <legend>회원가입</legend>
+                <div>
+                    <label for="id">아이디</label>
+                    <input type="text" id="id" name="id" />
+                </div>
+                <div>
+                    <label for="pw">패스워드</label>
+                    <input type="password" id="pw" name="pw" />
+                </div>
+            </fieldst>
+        </form>
+        <p>필드셋" 여러 폼 요소들의 그룹이라고 보면 됨</p>
+        <dl>
+            <dt>legend</dt>
+            <dd>캡션임, 어떤 기능인지 설명<br />cf. 회원가입, 검색</dd>
+            <dt>label</dt>
+            <dd>각 인풋 영역의 설명임 cf. id, pw br />웹접근성을 위해</dd>
+        </dl>
+        <p>
+            레이블의 for값과 인풋의 id를 동일하게 입력하면<br />레이블을 선택했을 때 인풋창 활성화됨<br />그러니까 id로
+            둘을 연결해주는것임
+        </p>
+        <p>name값: 서버에 정보 보낼 때 붙는 이름</p>
+        <p>비밀번호는 왜 인풋타입이 따로 있습니까 아이디는 없는데</p>
+    </body>
+</html>

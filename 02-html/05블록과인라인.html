@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>블록 인라인 | html</title>
+        <style>
+            #blue {
+                background-color: cadetblue;
+            }
+            .blue {
+                background-color: powderblue;
+            }
+            .yellow {
+                background-color: bisque;
+            }
+            .purple {
+                background-color: lavender;
+            }
+            .lemon {
+                background-color: lemonchiffon;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>html</h1>
+        <h2>Block & Inline</h2>
+        <h3>block</h3>
+        <div id="blue" class="blue">div는 진짜 유명한 블록 요소임</div>
+        <div class="yellow">div는 진짜 유명한 블록 요소임</div>
+        <h3>Inline</h3>
+        <span class="purple">span태그는 진짜 대표적인 인라인 요소임</span>
+        <span class="lemon">span태그는 진짜 대표적인 인라인 요소임</span>
+        <p>
+            인라인은 잘 쓰지는 않아요 인라인 쓰더라도 블록으로 바꿔서 씀, 이건 나중에 더 해봐야 알듯<br />인라인
+            요소에는 넓이 높이 못들어가요 넣어봣자 적용안됨, <br />블록요소로 바꾸는거는 나중에 css에서 알려줌
+        </p>
+        <p>헐 스타일에 세미콜론 넣는거는 속성이 여러 개 있어서 구분해야 될 때임;</p>
+        <dl>
+            <dt>inline style</dt>
+            <dd>태그에다가 스타일 넣는거<br />실무에서 쓰면 안됨, 쓰면 면접에서 떨어짐</dd>
+            <dt>internal style</dt>
+            <dd>html의 헤드 안에다가 스타일 넣는건데 실무에서는 안씀</dd>
+            <dt>external style</dt>
+            <dd>헤드 안에 링크 걸어서 넣는거</dd>
+        </dl>
+        <p>
+            만약에 스타일 오류가 나가지고 안나온다<br />그럼 코드 뒤져봣자 안보임<br />그러면 이제 크롬 개발자모드에
+            가서 오류난거를 검사함<br />크롬이 친절하게 알려줌<br />그런데 난 지금 저기뭐야 확장을 깔아서 개발자모드
+            안가도 보임 ㅋ<br />아니네 모두 다 보여주는 건 아니구나
+        </p>
+        <hr />
+        <p>id가 class보다 우선순위가 높다</p>
+        <p>
+            스타일 적용할 때는 id 넣지 마라, 백단에서도 id 써야하는데 id명 중복되면 오류난다<br />스타일은 class 써라<br />gnb처럼
+            딱 하나만 존재하는거: id써도 된다 &#128514;
+        </p>
+        <p>개발자는 예쁜 코드로 사랑을 전하는 습성이 있다고 한다</p>
+        <p>뷰포트: 사용자가 볼 수 있는 영역을 뜻함</p>
+        <p>initial-scale=1.0 <br />이것은 100프로로 보여주라는 뜻</p>
+        <p>파일 이름은 무조건 소문자로<br />왜냐면 대문자랑 섞으면 다른걸로 인식하는 웹서버가 있음</p>
+    </body>
+</html>
