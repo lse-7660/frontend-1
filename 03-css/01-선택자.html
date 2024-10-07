@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>선택자 | css</title>
+    </head>
+    <body>
+        <h1>CSS</h1>
+        <h2>선택자</h2>
+        <h3>심플 선택자</h3>
+        <h1 id="logo" class="logo">logo</h1>
+        <style>
+            h1 {
+                color: red;
+            }
+            #logo {
+                color: blue;
+            }
+            .logo {
+                color: green;
+            }
+            /* id가 우선순위를 확인 */
+            h1#logo {
+                color: yellow;
+            }
+            #logo.logo {
+                color: purple;
+            }
+            /* 이렇게 붙여쓰는건 웬만하면 하지마 우선순위 꼬인다 */
+            /* 아 한 칸 띄우는 건 자식일 때 */
+        </style>
+        <h3>결합자 선택기</h3>
+        <p>자손 선택: 공백</p>
+        <div class="selector1">
+            <p>child</p>
+            <section>
+                <p>grandchild</p>
+            </section>
+            <p>child</p>
+        </div>
+        <style>
+            /* 자손 선택: 공백 */
+            .selector1 p {
+                background-color: cadetblue;
+            }
+            /* 자식 선택: > */
+            .selector1 > p {
+                color: brown;
+            }
+            /* grandchild 선택 */
+            .selector1 section p {
+                color: #fff;
+            }
+        </style>
+        <p>그런데 실무할 때는 그냥 클래스 이름을 지어주세요</p>
+        <p>실무에서 하는 식으로 하자면</p>
+        <div class="selector2">
+            <p class="child">child</p>
+            <p class="child">child</p>
+            <section><p class="grandchild">grandchild</p></section>
+        </div>
+        <style>
+            .selector2 .child {
+                background-color: azure;
+            }
+            .selector2 .grandchild {
+                color: blue;
+            }
+        </style>
+        <br />
+        <p>인접 형제 선택기</p>
+        <input type="checkbox" id="term1" name="term1" />
+        <label for="term1">이용약관</label>
+        <br />
+        <input type="checkbox" id="term2" name="term2" />
+        <label for="term2">개인정보처리방침</label>
+        <style>
+            /* 인풋 바로 밑에 있는 라벨만 잡어 */
+            input:checked + label {
+                color: blue;
+            }
+        </style>
+        <br />
+        <div>
+            <p>가상 클래스 선택기</p>
+            <p>특정 상태가 되었을 때 스타일</p>
+        </div>
+        <br />
+        <div>
+            <p>상태 선택기(:상태값)</p>
+            <a href="#" class="btn">버튼</a>
+        </div>
+        <style>
+            .btn {
+                display: block;
+                border-radius: 10px;
+                width: 120px;
+                height: 50px;
+                text-align: center;
+                color: white;
+                background: gray;
+                text-decoration: none;
+            }
+            .btn:hover {
+                background: blue;
+            }
+            /* 이걸로 gnb depth 2 숨겻다가 보여주는거임 까꿍 */
+        </style>
+        <br />
+        <div>
+            <p>가상 클래스</p>
+            <ul class="nav1">
+                <li>menu1 <span>|</span></li>
+                <li>menu2 <span>|</span></li>
+                <li>menu3 <span>|</span></li>
+                <li>menu4 <span>|</span></li>
+            </ul>
+            <style>
+                .nav1 li:first-child {
+                    color: blue;
+                    font-weight: 700;
+                }
+                .nav1 li:last-child {
+                    color: red;
+                }
+                .nav1 li:last-child span {
+                    display: none;
+                }
+                .nav1 {
+                    display: flex;
+                    list-style: none;
+                }
+            </style>
+            <!-- 이거는 겁니 많이 쓰인대 -->
+        </div>
+        <div>
+            <input type="text" class="search" name="search" placeholder="Click Me to Get Focus" />
+            <style>
+                .search {
+                    padding: 16px 20px;
+                    border: 2px solid #777;
+                    border-radius: 5px;
+                }
+                .search:focus {
+                    background: #777;
+                }
+                .search:focus::placeholder {
+                    color: white;
+                }
+            </style>
+        </div>
+    </body>
+</html>

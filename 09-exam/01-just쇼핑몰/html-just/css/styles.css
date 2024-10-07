@@ -1,1 +1,26 @@
 /* style */
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    line-height: 1.5;
+    color: #222328;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+/* 기본리셋, 웹디기능사 기본임, 외워야함 */
+
+/* layout */
+#wrap {
+    background-color: bisque;
+    width: 1200px;
+    margin: auto;
+}
+.logo {
+    background-color: burlywood;
+}
+#gnb dl {
+}
