@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Media | html</title>
+    </head>
+    <body>
+        <h1>html</h1>
+        <h2>media</h2>
+        <h3>비디오</h3>
+        <video src="./img/mov_bbb.mp4" controls autoplay></video>
+        <p>
+            상대경로로 넣었음, 그리고 안됨<br />헐 뭐야 controls 속성 넣으니까 갑자기 재생됨 개쩌네<br />w3c랑 다르게
+            넣었으니까 나중에 참고~
+        </p>
+        <video controls loop>
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4" />
+            <source src="./img/mov_bbb.webm" type="video/webm" />
+            <source src="./img/mov_bbb.mp4" />
+            <p>크롬은 대부분 자동재생 안됨~</p>
+        </video>
+        <p>여러개를 넣어야 할 경우에 이렇게 넣으렴<br />오류날까봐 여러 확장자/여러 경로 넣을때</p>
+        <hr />
+        <h3>오디오</h3>
+        <p>mp3 아니면 WAV : 모든 브라우저에서 지원</p>
+        <audio src="./img/horse.mp3"></audio>
+        <hr />
+        <h3>유튜브</h3>
+        <p>실무에서는 유튜브 제일 많이 씀<br />유튜브 서버를 가지고 저장공간 아낄 수 있음</p>
+        <iframe
+            width="1280"
+            height="720"
+            src="https://www.youtube.com/embed/UMcqpEuMUrs?autoplay=1&mute=1&controls=0"
+            title="마음이 조급할 때 듣는 브금"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+        ></iframe>
+        <p>영상 우클릭해서 소스코드 복사 붙여넣기</p>
+        <p>타이틀은 웹접근성을 위한 캡션같은 역할인가? 사진에서는 alt 했잔아</p>
+        <p>자동재생이나 음소거 하고싶으면<br />Id값 뒤에다가 ? 넣고 &으로 추가</p>
+    </body>
+</html>
