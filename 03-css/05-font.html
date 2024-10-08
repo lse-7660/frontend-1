@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Font | css</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            /* reset */
+            html,
+            body {
+                font-family: 'Noto Sans KR', sans-serif;
+                font-size: 16px;
+                /* chrome browser default : 16px */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>css</h1>
+        <h2>font</h2>
+        <h3>font family</h3>
+        <style>
+            h1 {
+                font-family: 'Black Han Sans', sans-serif;
+            }
+        </style>
+        <p class="txt1">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nulla ex sed tenetur numquam saepe. Reprehenderit
+            expedita, distinctio nesciunt officiis repellat natus perspiciatis a, quisquam suscipit corporis illum! Ex
+            placeat sapiente, iusto, et velit repudiandae iure nemo reiciendis earum assumenda cumque?
+        </p>
+        <style>
+            .txt1 {
+                font-family: Verdana, sans-serif;
+            }
+        </style>
+        <hr />
+        <div>
+            <h4>절대사이즈 px</h4>
+            <p class="txt2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, deleniti.</p>
+            <style>
+                .txt2 {
+                    font-size: 20px;
+                }
+            </style>
+        </div>
+        <br />
+        <p>폰트사이즈는 자주 바뀌기 때문에<br />전체 수정이 쉽도록 em 단위를 쓰도록합시다</p>
+        <div>
+            <h4>상대사이즈: rem, em</h4>
+            <p class="txt3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae, neque.</p>
+            <style>
+                .txt3 {
+                    color: darkblue;
+                    font-size: 1.25em;
+                }
+            </style>
+        </div>
+        <div>
+            <ul class="list1">
+                <li>안녕하세요</li>
+                <li><b>감사</b>해요</li>
+                <li>잘있어요</li>
+                <li><b>다시</b> 만나요</li>
+            </ul>
+            <style>
+                .list1 li:first-child {
+                    font-size: 1rem;
+                }
+                .list1 li:nth-child(2) {
+                    font-size: 1rem;
+                }
+                .list1 li:nth-child(3) {
+                    font-size: 1.75rem;
+                }
+                .list1 li:last-child {
+                    font-size: 2rem;
+                }
+                .list1 li:nth-child(2) b {
+                    font-size: 1.25rem;
+                }
+                .list1 li:last-child b {
+                    font-size: 2rem;
+                }
+            </style>
+        </div>
+        <p>아침해가 뜨면(아침해가 뜨면~) <br />매일 같은 사람들과 <br />또 다하시 새로~운~~ <br />뭐였지</p>
+        <p>
+            em은 문제가 있음 <br />
+            그게 뭐냐 <br />em은 부모 기준 사이즈임 <br />기준이 바뀌니까 관리가 어려움 <br />그래서 쓰는게 rem
+            <br />rem은 기준이 바뀌지 <br />문서 폰트사이즈가 기준임
+        </p>
+        <div>
+            <p>정리</p>
+            <dl>
+                <dt>em</dt>
+                <dd>
+                    부모를 기준으로 배수를 계산<br />부모 폰트 사이즈가 20px일 때, 1em = 20px <br />2em = 40px
+                    <br />부모의 사이즈가 바뀔 수 있으므로 기준이 변함 > 관리 어려움
+                </dd>
+                <dt>rem</dt>
+                <dd>html과 body를 기준으로 배수를 계산 <br />하여 기준이 변경되지 X</dd>
+            </dl>
+        </div>
+        <div>
+            <p>vw: viewport</p>
+            <p class="txt4">집에 가고 싶습니다. 진짜 진심으로.</p>
+            <style>
+                .txt4 {
+                    font-size: 10vw;
+                }
+            </style>
+            <!-- 폰트에 vw 막 잘쓰지는 않고요 경우에 따라서 잘 쓰세요 -->
+        </div>
+        <div>
+            <p>google fonts</p>
+            <p>이것은 웹폰트이다</p>
+        </div>
+    </body>
+</html>

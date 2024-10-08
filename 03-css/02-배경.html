@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>배경 | css</title>
+    </head>
+    <body style="height: 300vh">
+        <h1>css</h1>
+        <h2>background</h2>
+        <div class="box1">
+            <h3>background color</h3>
+            <p>background-color : 컬러값만!! 넣을수있음<br />background : shorthand, 컬러 포함 이것저것 넣을 수 있음</p>
+            <style>
+                .box1 {
+                    background: #9f9f9f80;
+                }
+            </style>
+        </div>
+        <div class="box2">
+            <h3>background image</h3>
+            <style>
+                .box2 {
+                    height: 200px;
+                    background: url(./img/kakao.png) no-repeat 50% 50%;
+                    background-size: contain;
+                }
+            </style>
+        </div>
+        <div class="box3">
+            <h3>background attachment</h3>
+            <style>
+                .box3 {
+                    height: 600px;
+                    background: url(./img/bg-a.jpg) no-repeat 100% 0%;
+                    background-size: cover;
+                }
+            </style>
+            <p>
+                background-size: <br />
+                contain: 바깥 영역이 남을 수는 있지만 이미지가 잘리지 않음; 로고에다 써<br />cover: 이미지가 잘릴 수는
+                있지만 영역을 꽉 채워줌; 잘려도 ㄱㅊ은 배경
+            </p>
+        </div>
+        <div>
+            <p>shorthand는 순서가 있다,,,</p>
+            <img src="./img/bg shorthand.png" alt="" />
+        </div>
+    </body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Text | css</title>
+        <link
+            rel="stylesheet"
+            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+        />
+    </head>
+    <body>
+        <h1>css</h1>
+        <h2>text</h2>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere unde aperiam quod quis dolore voluptas
+            voluptatem a incidunt iusto. Praesentium neque deserunt quam ullam assumenda commodi placeat impedit minus
+            vitae, perspiciatis suscipit dignissimos totam eius alias sequi sit tempora dolorem?
+        </p>
+        <style>
+            h1,
+            h2 {
+                text-align: center;
+            }
+            p {
+                letter-spacing: -0.4px;
+                line-height: 1.5;
+                color: #818181;
+                text-align: center;
+            }
+        </style>
+        <div>
+            <img src="./img/youtube.png" alt="Youtube" />
+            Youtube
+        </div>
+        <style>
+            img {
+                vertical-align: middle;
+                margin-top: -5px;
+            }
+        </style>
+        <br />
+        <a href="#">Ritsu Kageyama</a>
+        <style>
+            a {
+                text-decoration: none;
+                color: black;
+                text-transform: uppercase;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+        </style>
+        <br /><br />
+        <button class="btn1">
+            <span class="blind">집에 가고싶을때마다 누르는 버튼</span>
+        </button>
+        <button class="ritsu">리츠가 보고싶을 때마다 <br />누르는 버튼</button>
+        <style>
+            button {
+                width: 200px;
+                height: 80px;
+                background: #c9c9c9;
+                color: black;
+                border-style: none;
+                border-radius: 10px;
+            }
+            .blind {
+                display: block;
+                text-indent: -9999px;
+                overflow: hidden;
+            }
+            button.btn1::before {
+                content: '\f015';
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
+            }
+            button:hover {
+                background: #2d2d2d;
+            }
+            button:hover::before {
+                color: white;
+            }
+        </style>
+        <h3>white space</h3>
+        <p>css > text > white space <br />한줄로 나와야하는 뉴스기사 제목 슬라이드같은거</p>
+        <p class="lorem">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum accusantium inventore voluptatum sapiente
+            fugit quo, expedita dolores ea autem tenetur fuga pariatur rerum optio qui placeat dolor saepe alias
+            incidunt libero eveniet suscipit facilis nostrum eius. Alias cum facere aspernatur!
+        </p>
+        <style>
+            .lorem {
+                white-space: nowrap;
+            }
+        </style>
+    </body>
+</html>

@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>선택자 | css</title>
+        <link
+            rel="stylesheet"
+            href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+        />
     </head>
     <body>
         <h1>CSS</h1>
@@ -69,18 +73,37 @@
             }
         </style>
         <br />
-        <p>인접 형제 선택기</p>
-        <input type="checkbox" id="term1" name="term1" />
-        <label for="term1">이용약관</label>
-        <br />
-        <input type="checkbox" id="term2" name="term2" />
-        <label for="term2">개인정보처리방침</label>
-        <style>
-            /* 인풋 바로 밑에 있는 라벨만 잡어 */
-            input:checked + label {
-                color: blue;
-            }
-        </style>
+        <div>
+            <p>인접 형제 선택기</p>
+            <input type="checkbox" id="term1" name="term1" />
+            <label for="term1" class="label">이용약관</label>
+            <br />
+            <input type="checkbox" id="term2" name="term2" />
+            <label for="term2" class="label">개인정보처리방침</label>
+            <style>
+                /* 인풋 바로 밑에 있는 라벨만 잡어 */
+                input:checked + label {
+                    color: blue;
+                }
+                .label::before {
+                    content: '';
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    border: 2px solid gray;
+                    margin-right: 5px;
+                }
+                input:checked + .label::before {
+                    content: '';
+                    display: inline-block;
+                    width: 10px;
+                    height: 10px;
+                    background-color: blue;
+                    border: 2px solid blue;
+                }
+            </style>
+            <!-- inline-block은 나중에는 쓰지마 flex 배우면 그때 다시~ -->
+        </div>
         <br />
         <div>
             <p>가상 클래스 선택기</p>
@@ -111,10 +134,10 @@
         <div>
             <p>가상 클래스</p>
             <ul class="nav1">
-                <li>menu1 <span>|</span></li>
-                <li>menu2 <span>|</span></li>
-                <li>menu3 <span>|</span></li>
-                <li>menu4 <span>|</span></li>
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+                <li>menu4</li>
             </ul>
             <style>
                 .nav1 li:first-child {
@@ -130,6 +153,14 @@
                 .nav1 {
                     display: flex;
                     list-style: none;
+                }
+                .nav1 li::after {
+                    content: '|';
+                    margin: 0 10px;
+                }
+                /* 실무에서는 박스 그려서 씀 */
+                .nav1 li:last-child::after {
+                    display: none;
                 }
             </style>
             <!-- 이거는 겁니 많이 쓰인대 -->
@@ -147,6 +178,80 @@
                 }
                 .search:focus::placeholder {
                     color: white;
+                }
+            </style>
+        </div>
+        <br />
+        <div>
+            <h3>가상 요소</h3>
+            <p>콜론 두 개 넣어 사용<br />많이 쓰는거: before / after <br /></p>
+            <p>
+                before/after를 쓰는거는 컴포넌트화를 위해서 <br />반복되는 요소를 한번에 수정해야할 때<br />i태그에
+                css로 넣어놓은 이미지를 수정하면 전체 다 바뀜<br />
+            </p>
+            <ul class="list2">
+                <li>kiwi1</li>
+                <li>kiwi2</li>
+                <li>kiwi3</li>
+                <li>kiwi4</li>
+            </ul>
+            <style>
+                .list2::before {
+                    content: 'ul 앞에 내용';
+                }
+                .list2 {
+                    list-style: none;
+                    padding: 0;
+                }
+                .list2 li::before {
+                    display: inline-block;
+                    content: '';
+                    background: green;
+                    width: 10px;
+                    height: 10px;
+                    margin-right: 10px;
+                }
+                .list2 li::after {
+                    content: '\f535';
+                    font-family: 'Line Awesome Free';
+                    font-weight: 900;
+                    padding-left: 10px;
+                }
+            </style>
+        </div>
+        <br />
+        <div>
+            <ul class="list3">
+                <li>menu1</li>
+                <li>menu2</li>
+                <li>menu3</li>
+            </ul>
+            <style>
+                .list3 {
+                    list-style: none;
+                    padding: 0;
+                }
+                .list3 li::before {
+                    font-family: 'Line Awesome Free';
+                    font-weight: 900;
+                    content: '\f105';
+                    padding-right: 5px;
+                }
+                /* content가 있어야 before/after가 생김 비어있어도 content는 있어야함 */
+            </style>
+        </div>
+        <br />
+        <div>
+            <p>속성선택자 []</p>
+            <a href="#">네이버1</a>
+            <a href="#" target="_blank">네이버2</a>
+            <a href="#" target="_top">네이버3</a>
+            <style>
+                a[target] {
+                    color: #ff000080;
+                }
+                a[target='_blank'] {
+                    color: #00800080;
                 }
             </style>
         </div>
