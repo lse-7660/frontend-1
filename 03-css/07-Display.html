@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Display | css</title>
+        <style>
+            html,
+            body {
+                font-size: 16px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>css</h1>
+        <h2>Display</h2>
+        <div class="box1">block</div>
+        <p>블록 요소의 기본값: auto <br />가로 100%, 높이 0</p>
+        <span class="box2">inline</span>
+        <p>인라인 요소의 기본값: auto <br />가로 0, 높이 0</p>
+        <style>
+            .box1 {
+                background: #9cc1df;
+                max-width: 460px;
+                height: 200px;
+                margin: auto;
+                /* desktop */
+                /* 가로 600 이상 */
+            }
+            @media screen and (min-width: 600px) {
+                .box1 {
+                    background: #ebb0bd;
+                    max-width: none;
+                    height: auto;
+                }
+            }
+            .box2 {
+                display: block;
+                background: #a591df;
+                width: 500px;
+                height: 300px;
+            }
+        </style>
+        <p>해외의 경우 가로세로 패딩 마진 등등 모든 수치를 rem으로 하고있음</p>
+        <br />
+        <p>min width</p>
+        <button>REIGEN</button>
+        <style>
+            button {
+                display: block;
+                width: 100%;
+                min-width: 200px;
+                min-height: 50px;
+                background: #f7b66c;
+                border: 0;
+            }
+        </style>
+        <br />
+        <div class="margin"></div>
+        <style>
+            .margin {
+                width: 100px;
+                height: 100px;
+                background: #f8debf;
+                margin: 20px 40px;
+            }
+        </style>
+        <div class="padding">padding <br />버튼 이렇게 만들면 되</div>
+        <style>
+            .padding {
+                background: #7dcab0;
+                padding: 100px 0;
+                text-align: center;
+            }
+        </style>
+        <br />
+        <div class="box-model">
+            <p>Box Model</p>
+        </div>
+        <style>
+            .box-model {
+                width: 1000px;
+                height: 500px;
+                background: #cecece;
+                padding: 0 20px;
+                border: 10px solid #000;
+                box-sizing: border-box;
+            }
+        </style>
+        <br />
+        <div class="block">block</div>
+        <div class="block">block</div>
+        <span class="inline">inline</span>
+        <span class="inline">inline</span>
+        <style>
+            .block {
+                height: 100px;
+                width: 100px;
+                background: #bd98db;
+            }
+            .inline {
+                display: none;
+                width: 100px;
+                height: 100px;
+                background: #a7b9f5;
+            }
+        </style>
+        <p>
+            블록 요소는 위아래 간격 없이 딱 붙음! <br />반면 인라인은 옆으로 떨어져있다 <br />드 인라인 사이에 엔터가
+            있으면 그럼 <br />인라인블록은 텍스트 길이에 따라 크기가 달라지는 버튼 만들때 사용하면 조음 <br />display:
+            none; 은 nav 드롭다운 만들때 <br />근데 네이버는 blind 씀, none은 스크린리더가 읽어줄수없음<br />visibility:
+            hidden; 쓰면되
+        </p>
+    </body>
+</html>

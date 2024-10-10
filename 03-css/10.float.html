@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Float | css</title>
+    </head>
+    <body>
+        <h1>css</h1>
+        <h2>float</h2>
+        <p>레이아웃 속성이긴 한데 옛날방식임 <br />clearfix: 띄워놓은 자식을 알아볼수잇게해줌</p>
+        <div id="wrap">
+            <header>
+                <h1>logo</h1>
+                <nav>nav</nav>
+            </header>
+            <main>
+                <ul>
+                    <li>우리이거해야할까요</li>
+                    <li>진짜로</li>
+                    <li>아 귀찮은데요</li>
+                    <li>우리그냥플렉스를하자</li>
+                    <li>아 해야되는구나하겟습니다</li>
+                </ul>
+            </main>
+            <footer>footer</footer>
+        </div>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            header {
+                overflow: hidden;
+                /* height: 200px; */
+                background: #ffeabd;
+            }
+            h1 {
+                float: left;
+            }
+            nav {
+                float: right;
+            }
+            main {
+                background: #f7b9b9;
+            }
+            main ul {
+                overflow: auto;
+                list-style: none;
+                width: 100%;
+            }
+            main ul li {
+                float: left;
+                margin-right: 20px;
+                width: calc(20% - 16px);
+                height: 200px;
+                background: skyblue;
+                border: 1px solid #000;
+                box-sizing: border-box;
+            }
+            ul li:last-child {
+                margin-right: 0;
+            }
+            footer {
+                background: #8a8a8a;
+            }
+        </style>
+        <p>
+            모든 요소를 float하면 섹션의 높이값이 0이 됨 <br />자리를 만들어주기위해 / 부모가 자식을 포함할 수 있게
+            하려고 하는게 clearfix <br />
+            <ul style="border: 1px solid #000;">
+                <li>overflow를 auto로 하거나</li>
+                <li>after로 공간을 만들어주거나</li>
+            </ul>
+            뭐 그런건데 그냥 flex를 씁시다;<br>우리 이거
+        </p>
+        <p>다른 방법은 <a href="https://www.w3schools.com/css/css_float_clear.asp">여기</a> 참고</p>
+    </body>
+</html>

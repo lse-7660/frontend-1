@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Position | css</title>
+    </head>
+    <body>
+        <h1>css</h1>
+        <h2>Position</h2>
+        <div>
+            <h3>absolute</h3>
+            <p>
+                포지션은 기본이 static<br />
+                앱솔루트는 기준을 지정하지 않는 경우 최상위 요소(body)를 기준으로 배치됨 <br />기준이 될 상위 요소의
+                position을 relative로 지정<br />
+            </p>
+        </div>
+        <div class="rel">
+            <div class="sticky">집에가고싶다 라고 함</div>
+        </div>
+        <style>
+            .sticky {
+                position: sticky;
+                top: 110px;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                background: #7abfff;
+            }
+        </style>
+        <div class="rel">
+            <div class="abs1"></div>
+            <div class="abs2"></div>
+        </div>
+        <header id="header">header</header>
+        <p>z-index는 섹션별로 단위를 지정하기<br />예를들면 헤더는 1000대 바디는 100대</p>
+        <style>
+            body {
+                height: 200vh;
+            }
+            #header {
+                z-index: 1000;
+                position: fixed;
+                top: 0;
+                left: 0;
+                color: #fff;
+                width: 100%;
+                height: 100px;
+                background: #202020;
+            }
+            .rel {
+                border-radius: 50px;
+                position: relative;
+                width: 500px;
+                height: 500px;
+                background: #d5d5d8;
+            }
+            .abs1 {
+                z-index: 4;
+                border-radius: 100px;
+                position: absolute;
+                top: 150px;
+                left: 250px;
+                width: 100px;
+                height: 100px;
+                background: #a69ae9;
+            }
+            .abs2 {
+                border-radius: 100px;
+                position: absolute;
+                top: 100px;
+                left: 200px;
+                width: 200px;
+                height: 200px;
+                background: #47d6b2;
+            }
+        </style>
+    </body>
+</html>
