@@ -1,0 +1,12 @@
+@import 'fonts.css';
+/* 06 bootstrap 덮어쓰기 */
+.btn-primary {
+    background-color: red;
+    border-color: red;
+}
+.modal-title {
+    font-size: 3rem;
+}
+.modal-dialog {
+    margin-top: 10rem;
+}

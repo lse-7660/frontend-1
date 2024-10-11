@@ -67,26 +67,151 @@
                 flex-wrap: wrap;
             }
             .wrap div {
-                width: calc(30% - 20px);
+                width: calc(25% - 50px);
             }
         </style>
 
-        <div class="flex-container">
-            <div>1</div>
-            <div>2</div>
-            <div>3</div>
-        </div>
+        <h3>justify content</h3>
+        <p>왼쪽정렬(flex-start)이 default <br />제일 많이 쓰는건 양쪽으로 정렬해주는 space-between</p>
 
-        <div class="flex-container">
+        <div class="flex-container justfy">
             <div>1</div>
             <div>2</div>
             <div>3</div>
         </div>
+        <style>
+            .justfy {
+                display: flex;
+                justify-content: space-between;
+            }
+        </style>
 
-        <div class="flex-container">
+        <div class="flex-container items">
             <div>1</div>
             <div>2</div>
             <div>3</div>
         </div>
+        <style>
+            .items {
+                display: flex;
+                align-items: center;
+                height: 300px;
+            }
+        </style>
+
+        <div class="flex-container content">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <style>
+            .content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                height: 500px;
+            }
+            .content div {
+                width: calc(32% - 40px);
+            }
+        </style>
+        <div class="flex-container centering">
+            <div>1</div>
+        </div>
+        <style>
+            .centering {
+                display: flex;
+                height: 400px;
+                justify-content: center;
+                align-items: center;
+            }
+        </style>
+
+        <h3>Flex Items</h3>
+        <div class="flex-container order" style="display: flex">
+            <div style="order: 2">1</div>
+            <div style="order: 3">2</div>
+            <div style="order: 1">3</div>
+        </div>
+        <div class="flex-container grow">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+        </div>
+        <style>
+            .grow {
+                display: flex;
+            }
+            .grow div {
+                flex-grow: 1;
+            }
+        </style>
+        <p>야! 이거 좋다!</p>
+        <br />
+        <div class="flex-container grow2">
+            <div>header</div>
+            <div id="container">main</div>
+            <div>footer</div>
+        </div>
+        <style>
+            .grow2 {
+                display: flex;
+                flex-direction: column;
+                min-height: 100vh;
+                box-sizing: border-box;
+                justify-content: space-between;
+            }
+            #container {
+                flex-grow: 1;
+            }
+        </style>
+        <p>우와 야 이거 쩐다<br />grow는 기본값이 0임 하나만 1 넣으면 걔만 늘어나는겨</p>
+        <br />
+        <div class="flex-container shrink">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+        <style>
+            .shrink {
+                display: flex;
+                overflow-x: auto;
+            }
+            .shrink div {
+                width: 25%;
+                flex-shrink: 0;
+            }
+        </style>
+        <p>
+            shrink는 기본값이 1임, 그러니까 자동으로 자식 크기 줄이는 게 디폴트고 <br />크기 유지하고 싶으면 shrink: 0;
+            하는거임<br />모바일 가로 스크롤 이렇게 만든대
+        </p>
+        <div class="flex-container basis">
+            <div>Lorem, ipsum dolor.</div>
+            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</div>
+            <div>Lorem.</div>
+        </div>
+        <style>
+            .basis {
+                display: flex;
+            }
+            .basis div {
+                flex-grow: 1;
+                flex-basis: 0;
+            }
+        </style>
     </body>
 </html>

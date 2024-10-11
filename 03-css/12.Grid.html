@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Grid | css</title>
+    </head>
+    <body>
+        <h1>css</h1>
+        <h2>Grid</h2>
+        <div class="grid-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+        </div>
+        <style>
+            .grid-container {
+                display: grid;
+                grid-template-columns: repeat(1, 1fr);
+                gap: 10px;
+                background-color: #2196f3;
+                padding: 10px;
+            }
+
+            .grid-container > div {
+                background-color: rgba(255, 255, 255, 0.8);
+                border: 1px solid black;
+                text-align: center;
+                font-size: 30px;
+            }
+            /* 700픽셀 이상일 경우 2단 */
+            @media screen and (min-width: 700px) {
+                .grid-container {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
+            /* 1000이상일 경우 3단 */
+            @media screen and (min-width: 1000px) {
+                .grid-container {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+        </style>
+        <p>
+            그리드는 이런 경우 아니면 잘 사용 안하는듯하다<br />opensea의 경우 pc버전과 모바일 버전을 따로 작업했는데<br />모바일
+            버전을 그리드로 만듬
+        </p>
+    </body>
+</html>

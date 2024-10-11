@@ -8,6 +8,34 @@
     <body>
         <h1>css</h1>
         <h2>Position</h2>
+        <p>완벽한 센터링</p>
+        <div class="center-wrap">
+            <div class="center"></div>
+        </div>
+        <style>
+            .center-wrap {
+                position: relative;
+                height: 600px;
+                background: #d6e7b5;
+            }
+            .center {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+                /* top: calc(50% - 50px);
+                left: calc(50% - 50px); */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background: #000;
+            }
+        </style>
+        <p>
+            top left 50%로 하면 왼쪽 상단 기준으로 정렬됨<br />나는 calc로 가운데 맞췄는데<br />강사님 방법: top left
+            50%, margin top left - 상자 크기 절반 <br />
+            하지만 2D 트랜스폼으로 할거란다 그게 제일 좋아
+        </p>
+
         <div>
             <h3>absolute</h3>
             <p>

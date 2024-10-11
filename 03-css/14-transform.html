@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>transform : css</title>
+        <style>
+            div {
+                width: 100px;
+                height: 100px;
+                background: tomato;
+                /* transition: transform 1s; */
+            }
+        </style>
+    </head>
+    <body>
+        <h1>css transform</h1>
+
+        <h2>1. 기본</h2>
+        <div class="box1"></div>
+
+        <h2>2. translate</h2>
+        <div class="box2"></div>
+        <style>
+            .box2 {
+                transform: translate(100px);
+            }
+        </style>
+
+        <h2>3. rotate</h2>
+        <div class="box3"></div>
+        <style>
+            .box3 {
+                transform: rotate(45deg);
+            }
+        </style>
+
+        <h2>4. scale</h2>
+        <div class="box4"></div>
+        <style>
+            .box4 {
+                transition: transform 0.5s;
+            }
+            .box4:hover {
+                transform: scale(1.2);
+            }
+        </style>
+
+        <h2>5. skew</h2>
+        <div class="box5"></div>
+        <style>
+            .box5 {
+                transform: skew(30deg);
+            }
+        </style>
+    </body>
+</html>
