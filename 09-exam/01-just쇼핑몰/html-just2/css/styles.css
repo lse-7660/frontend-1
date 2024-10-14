@@ -1,0 +1,221 @@
+/* reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 내 가로 사이즈가 실제 가로 사이즈가 되기를 */
+    color: #222328;
+    list-style: none;
+    text-decoration: none;
+}
+/* reset END */
+/* 공통 스타일 */
+.blind {
+    font-size: 0px;
+    line-height: 0;
+    text-indent: -9999px;
+}
+#wrap {
+    width: 1200px;
+    margin: auto;
+    background: #fff;
+}
+#header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+#gnb {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* margin-left: auto; */
+}
+/* 두개는 왼쪽 정렬 / 하나는 오른쪽정렬 > 플렉스로 두개 왼쪽 정렬하고 오른쪽은 margin-left: auto;하는게 좋음 */
+#gnb dl {
+    min-width: 120px;
+    position: relative;
+    z-index: 10;
+}
+/* #gnb dl:hover dd { */
+#gnb:hover dd {
+    display: block;
+}
+#gnb::before {
+    display: none;
+    content: '';
+    position: absolute;
+    top: 100px;
+    right: 0;
+    background: #fff;
+    width: 1200px;
+    height: 160px;
+}
+#gnb:hover::before {
+    display: block;
+}
+#gnb dt a {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: #fff;
+    padding: 20px 30px;
+}
+#gnb dt a:hover {
+    color: blue;
+    font-weight: 700;
+}
+#gnb dt a::after {
+    display: none;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: blue;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+#gnb dl:hover a::after {
+    display: block;
+}
+#gnb dd {
+    display: none;
+    /* display: block; */
+    background: #fff;
+    padding: 5px 30px;
+}
+#gnb dd a {
+    display: block;
+}
+.slide {
+    overflow: hidden;
+}
+/* ul은 li를 감싸고있음, ul자체가 움직일거임 > 그러면 ul이 움직일때 범위 바깥을 잘라주는건 .slide */
+.slide ul {
+    display: flex;
+}
+.slide ul img {
+    display: block;
+}
+/* inline 태그인 img 뒤에 엔터를 쳐서 스페이스로 처리된거 > 그래서 이미지 사이에 공간생김 > 그럼 img를 block으로 만들어주면됨 */
+/* 태그 잡을때 모든 경로를 넣어버리면 특이성이 너무 높아짐 > 나중에 운영이힘들어짐 */
+#container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+    height: 200px;
+}
+#container section {
+    width: 30%;
+}
+section .title {
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+.list-bbs li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.list-bbs li::before {
+    display: block;
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: #222328;
+}
+.list-bbs a {
+    display: block;
+    white-space: nowrap;
+    width: 95%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.bnr img {
+    width: 100%;
+}
+.list-goto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 10px;
+}
+.list-goto a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    height: 76px;
+    border-radius: 5px;
+    background: #f2f2f2;
+}
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    background: #eee;
+    padding: 0 20px;
+}
+footer .logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+footer address {
+    font-style: normal;
+}
+.sns a {
+    display: inline-block;
+    padding: 40px 0;
+    padding-left: 20px;
+}
+.dimmed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+/* fixed는 기준이 무조건 body임 */
+#modal {
+    /* display: flex; */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.modal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 450px;
+    height: 450px;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+}
+#modal .modal-content {
+    word-break: break-all;
+}
+#modal h2 {
+    text-align: center;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+#modal .btn-close {
+    display: block;
+    margin: auto auto 0 auto;
+    padding: 7px 35px;
+    border: none;
+    border-radius: 5px;
+    background: #222328;
+    color: white;
+}
