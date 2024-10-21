@@ -93,14 +93,42 @@
     display: block;
 }
 .slide {
+    position: relative;
+    height: 300px;
     overflow: hidden;
 }
 /* ul은 li를 감싸고있음, ul자체가 움직일거임 > 그러면 ul이 움직일때 범위 바깥을 잘라주는건 .slide */
 .slide ul {
     display: flex;
+    position: absolute;
+    animation: ani-slide 10s infinite;
 }
+@keyframes ani-slide {
+    0% {
+        left: 0;
+    }
+    25% {
+        left: 0;
+    }
+    35% {
+        left: -1200px;
+    }
+    60% {
+        left: -1200px;
+    }
+    70% {
+        left: -2400px;
+    }
+    95% {
+        left: -2400px;
+    }
+    100% {
+        left: 0;
+    }
+}
+
 .slide ul img {
-    display: block;
+    display: flex;
 }
 /* inline 태그인 img 뒤에 엔터를 쳐서 스페이스로 처리된거 > 그래서 이미지 사이에 공간생김 > 그럼 img를 block으로 만들어주면됨 */
 /* 태그 잡을때 모든 경로를 넣어버리면 특이성이 너무 높아짐 > 나중에 운영이힘들어짐 */

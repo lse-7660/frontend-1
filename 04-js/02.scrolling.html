@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>js scrolling</title>
+    </head>
+    <body>
+        <script>
+            const item = document.querySelector('.item');
+            // item의 배경색을 lightpink로 변경
+            // item.style.backgroundColor = 'lightcoral';
+            // item.style.fontSize = '3rem';
+            // item.style.transform = 'translate(100px, 100px) scale(1.5) rotate(45deg)';
+
+            // 스크롤 이벤트
+            window.addEventListener('scroll', function () {
+                const scrolled = window.scrollY; // 윈도우의 스크롤값
+                console.log('scrollY : ' + scrolled + 'px'); // 스크롤값
+                console.log(`스크롤 값 : ${scrolled}px`);
+                // item의 background 컬러를 lightpink로 변경
+                const item = document.querySelector('.item');
+                item.style.backgroundColor = 'lightcoral';
+                // 스크롤 시 item 요소의 left 값을 100로
+                item.style.left = `${scrolled}px`;
+                item.style.top = `${scrolled + 300}px`;
+                // item.style.transform = `scale(${scrolled * 0.01 + 1}) rotate(${scrolled * 0.1}deg)`;
+            });
+            // ``: 변수+단위 쓸때
+        </script>
+        <div class="item">item1</div>
+        <style>
+            body {
+                height: 200vh;
+                overflow-x: hidden;
+            }
+            .item {
+                position: absolute;
+                top: 50vh;
+                left: 10px;
+                /* transform: translateX(-50%); */
+                width: 300px;
+                height: 300px;
+                background-color: lightseagreen;
+            }
+        </style>
+    </body>
+</html>

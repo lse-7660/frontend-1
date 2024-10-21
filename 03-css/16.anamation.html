@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>animation | css</title>
+    </head>
+    <body>
+        <h1>css animation</h1>
+        <div class="wrap">
+            <div class="box box1">box1</div>
+            <div class="box box2">box2</div>
+        </div>
+        <style>
+            .wrap {
+                position: relative;
+                width: 500px;
+                height: 500px;
+                background: #eee;
+            }
+            .box {
+                width: 100px;
+                height: 100px;
+            }
+            .box1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                animation: ani-box1 2s 1s infinite;
+                animation-direction: alternate;
+                background: lightgreen;
+            }
+            .box2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                animation: ani-box2 1s forwards;
+                background: lightcoral;
+            }
+            @keyframes ani-box1 {
+                0% {
+                    top: 0;
+                    left: 0;
+                }
+                25% {
+                    top: 0;
+                    left: 400px;
+                }
+                50% {
+                    top: 400px;
+                    left: 400px;
+                }
+                75% {
+                    top: 400px;
+                    left: 0;
+                }
+                100% {
+                    top: 0;
+                    left: 0;
+                }
+            }
+            @keyframes ani-box2 {
+                0% {
+                    top: 0;
+                    left: 0;
+                }
+                100% {
+                    top: 400px;
+                    left: 400px;
+                }
+            }
+        </style>
+    </body>
+</html>
