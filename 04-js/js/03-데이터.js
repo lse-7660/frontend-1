@@ -52,3 +52,62 @@ console.log(user.age);
 
 // 레이겐은 사기꾼입니다.
 console.log(`${user.name}는 ${user.profession}입니다.`);
+
+const userA = {
+    name: '리츠',
+    age: 13,
+};
+
+console.log(userA.name, userA.age);
+console.log(`${userA.name}는 ${userA.age}살 입니다.`);
+
+const userB = {
+    name: '니상',
+    age: 30,
+    oshi: userA,
+};
+
+console.log(userB);
+console.log(userB.oshi.name);
+// 대괄호 표기법
+console.log(userB['oshi']['name']);
+// 많이는 안 씀
+
+const users = [userA, userB];
+
+console.log(users);
+console.log(users[0]);
+console.log(users[0].name);
+console.log(users[0]['name']);
+
+// function 함수
+
+// 함수 선언
+function add(a, b) {
+    console.log(a + b);
+}
+// 함수 실행
+add(1, 3);
+
+// 함수 표현
+const ritsu = function () {
+    console.log('사랑해');
+};
+
+ritsu();
+
+const add2 = function (a, b) {
+    console.log(a + b);
+};
+
+add2(2, 5);
+
+// 화살표 함수
+// es6버전에서 나옴
+
+// (a, b: 매개변수)
+const add3 = (a, b) => {
+    console.log(a + b);
+};
+
+add3(3, 15);

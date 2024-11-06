@@ -18,12 +18,17 @@ console.log(a, b, c, d);
 
 // var, let은 재할당 가능
 
-const g = 1;
+const g = 1; // 전역변수
 function test() {
-    const e = 2;
+    const e = 2; // 지역변수
     console.log(g, e);
 }
 test();
 
 // console.log(g, e);
 // error
+
+// var는 요즘 잘 사용하지 않는다
+// let이랑 const 쓰면 됨
+// var는 오류가 많이 난다고 한다
+// 기본적으로 const를 쓰면 된다고 함
