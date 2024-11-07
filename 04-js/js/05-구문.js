@@ -125,3 +125,112 @@ function header(type) {
 }
 
 console.log(header('type1'));
+
+// switch > if statement
+
+function header2(type) {
+    if (type === 'type1') return '타입1헤더';
+    if (type === 'type2') return '타입2헤더';
+    return '개춥고, 졸림';
+}
+
+console.log(header2('type3'));
+
+// 반복문
+
+// 변수는 i로 해 그렇게 한다.
+// for statement
+// for (초기화; 조건; 증감) {실행될 코드}
+
+// 콘솔창에 '바보' 131번 출력
+for (let i = 0; i < 131; ++i) {
+    if (i < 131) {
+        console.log('바보');
+    }
+}
+
+// 콘솔창에 9부터 0까지 출력
+for (let i = 9; i > -1; i--) {
+    console.log(i);
+}
+
+// 2씩 줄어들게
+for (let i = 9; i > -1; i -= 2) {
+    console.log(i);
+}
+
+// 4보다 큰 수만 출력
+for (let i = 9; i > -1; i--) {
+    if (i < 4) {
+        break;
+    }
+    console.log(i);
+}
+
+// break는 반복문을 아예 끝냄
+// continue는 다음 걸로 건너감
+
+// 홀수만 출력
+for (let i = 9; i > 0; i--) {
+    if (i % 2 === 0) {
+        continue;
+    }
+    console.log(i);
+}
+
+// 문서에 '바보' 131번 출력
+// for (let i = 0; i < 50; ++i) {
+//     if (i < 50) {
+//         document.write('<p>바보</p>');
+//     }
+// }
+
+// for of: 배열의 요소를 하나씩 꺼내 변수에 할당
+// for(변수 of 배열) {실행될 코드}
+
+const spirits = ['Ekubo', 'Mogami', 'Candy'];
+
+for (let spirit of spirits) {
+    // console.log(spirit);
+    document.write(`${spirit} 바보`);
+}
+
+// for in: 객체의 속성을 하나씩 꺼내 변수에 할당
+// for (변수 in 객체) {실행될 코드}
+
+const evilSpirit = {
+    name: '에쿠보',
+    age: '???',
+    city: '쵸미시',
+};
+
+for (key in evilSpirit) {
+    console.log(key);
+    console.log(evilSpirit[key]);
+}
+
+// 반복문은 for문을 많이 쓴다고 함~
+
+// while statement
+// 무 한 반 복 가능
+// while (조건) {실행문}
+let w = 1;
+let plus = 0;
+
+while (w <= 10) {
+    plus += w; // sum = sum + i
+    w++;
+}
+
+console.log(plus);
+
+// do while: 잘 안쓰지만 머 한 번은 해 봅시다
+
+let s = 0;
+do {
+    console.log(s);
+    s++;
+} while (s < 10);
+
+// 배고파
+// 배고푸ㅏ으ㅏ
