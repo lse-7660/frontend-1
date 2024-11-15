@@ -1,0 +1,17 @@
+{
+    "name": "node-study",
+    "version": "1.0.0",
+    "description": "study node.js",
+    "scripts": {
+        "dev": "parcel ./index.html",
+        "build": "parcel build ./index.html"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "swiper": "^11.1.14"
+    },
+    "devDependencies": {
+        "parcel": "^2.12.0"
+    }
+}
