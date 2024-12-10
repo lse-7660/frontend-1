@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "target": "ES2016", // 2016년도 버전으로 자바스크립트를 타입스크립트로 변환
+        "module": "ESNext", // ECMAScript의 가장 최신 버전으로 모듈을 사용
+        "moduleResolution": "Node", // 모듈 해석 방식을 Node.js의 해석 방식으로 사용
+        "esModuleInterop": true, // CommonJS 모듈을 ES6 모듈로 변환
+        "lib": ["ESNext", "DOM"], // 사용할 라이브러리를 설정
+        "strict": true // 엄격한 타입 검사를 사용
+    },
+    "include": ["**/*.ts", "**/*.tsx, src/**/*.ts"], // 타입스크립트 파일을 찾을 위치
+    "exclude": ["node_modules"] // 타입스크립트 파일을 제외할 위치
+}
