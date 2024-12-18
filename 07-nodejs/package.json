@@ -1,0 +1,14 @@
+{
+    "name": "07-nodejs",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "index.html"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "swiper": "^11.1.15"
+    }
+}
