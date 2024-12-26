@@ -1,7 +1,6 @@
 'use client';
 
 import axios from 'axios';
-import { PencilLine } from 'lucide';
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
 
@@ -25,7 +24,7 @@ const PostsPage = () => {
     if (loading === true) {
         return <div>로딩 중...</div>;
     }
-
+    if (!posts) return <div>게시글을 찾을 수 없습니다</div>;
     return (
         <div>
             <h2>블로그 목록</h2>

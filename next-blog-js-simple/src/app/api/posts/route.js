@@ -1,5 +1,6 @@
 import { posts } from '@/data/posts';
 import { NextResponse } from 'next/server';
+import { v4 as uuidv4 } from 'uuid';
 
 //전체 글 조회 - GET
 export async function GET() {
@@ -22,7 +23,7 @@ export async function POST(req) {
         }
 
         const newPost = {
-            id: posts.length + 1,
+            id: uuidv4(),
             title: data.title,
             content: data.content,
             createdAt: new Date().toLocaleDateString(),

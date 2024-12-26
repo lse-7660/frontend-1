@@ -30,6 +30,21 @@ const PostDetailPage = ({ params }) => {
             });
     }, [resolvedParams, router]);
 
+    const handleDelete = async () => {
+        if (!confirm('정말 삭제하시겠습니까?')) return;
+
+        try {
+            const res = await axios.delete(`/api/posts/${resolvedParams.id}`);
+            if (res.status === 200) {
+                router.push('/posts');
+            } else {
+                alert('삭제에 실패했습니다.');
+            }
+        } catch (error) {
+            alert('오류가 발생했습니다.');
+        }
+    };
+
     // if (loading) {
     //     return <div>로딩 중...</div>;
     // }
@@ -46,6 +61,8 @@ const PostDetailPage = ({ params }) => {
                 <Link rel="stylesheet" href="/posts">
                     목록
                 </Link>
+                <Link href={`/posts/${resolvedParams.id}/edit`}>수정</Link>
+                <button onClick={handleDelete}>삭제</button>
             </div>
         </div>
     );
