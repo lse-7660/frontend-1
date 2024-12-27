@@ -1,5 +1,6 @@
 'use client';
 
+import { formatDate } from '@/utils/formatDate';
 import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
@@ -8,27 +9,25 @@ import React, { use, useEffect, useState } from 'react';
 const PostDetailPage = ({ params }) => {
     const router = useRouter();
     const [post, setPost] = useState(null);
-    // const [loading, setLoading] = useState(true);
-
-    // params = Promise ({id:'1'})
-    // use() 훅을 사용해서 unWrap 하기
+    const [loading, setLoading] = useState(true);
+    // params = Promise ({ id: '1' })
+    // use() 훅을 사용하여 unWrap 하기
+    // resolvedParams = { id: '1' }
     const resolvedParams = use(params);
-    // resolvedParams = {id: '1'}
 
     useEffect(() => {
+        // 게시글 불러오기
         axios
             .get(`/api/posts/${resolvedParams.id}`)
             .then((res) => {
                 setPost(res.data);
-                // setLoading(false);
+                setLoading(false);
             })
             .catch((error) => {
-                console.error('Error:', error);
+                // console.error(error)
                 setLoading(false);
-                alert('게시글을 불러올 수 없습니다.');
-                router.push('/posts');
             });
-    }, [resolvedParams, router]);
+    }, [resolvedParams.id, router]);
 
     const handleDelete = async () => {
         if (!confirm('정말 삭제하시겠습니까?')) return;
@@ -45,24 +44,28 @@ const PostDetailPage = ({ params }) => {
         }
     };
 
-    // if (loading) {
-    //     return <div>로딩 중...</div>;
-    // }
-    if (!post) {
+    if (loading) {
         return <div>로딩 중...</div>;
     }
-    // 와 미친 이거 너무 재밌다 post 데이터를 비동기적으로 가져오기 때문에 페이지가 로드될 때는 useState로 인해 post 값이 null이라서 null.title을 가져올수 없어서 오류가 난대 그래서 loading이나 !post로 post 데이터가 null일 때를 처리해야하는거임!
+    if (!post) return <div>게시글을 찾을 수 없습니다.</div>;
+
     return (
-        <div>
-            <h2>{post.title}</h2>
-            <p>{post.content}</p>
-            <span>{post.createdAt}</span>
-            <div>
-                <Link rel="stylesheet" href="/posts">
+        <div className="container mx-auto py-10 flex flex-col gap-4 min-h-screen">
+            <div className="flex justify-between items-end font-black border-b border-gray-300 pb-5">
+                <h2 className="text-4xl">{post.title}</h2>
+                <span className="text-gray-400 block text-right">{formatDate(post.createdAt)}</span>
+            </div>
+            <p className="text-xl flex-1">{post.content}</p>
+            <div className="flex border-t border-gray-300 pt-5">
+                <Link href={'/posts'} className="bg-gray-200 p-3">
                     목록
                 </Link>
-                <Link href={`/posts/${resolvedParams.id}/edit`}>수정</Link>
-                <button onClick={handleDelete}>삭제</button>
+                <Link href={`/posts/${resolvedParams.id}/edit`} className="ml-auto bg-gray-200 p-3">
+                    수정
+                </Link>
+                <button onClick={handleDelete} className="ml-3 bg-gray-200 p-3">
+                    삭제
+                </button>
             </div>
         </div>
     );

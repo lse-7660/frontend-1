@@ -1,14 +1,19 @@
 'use client';
 
-import axios from 'axios';
-import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import Link from 'next/link';
+import axios from 'axios';
+import { formatDate } from '@/utils/formatDate';
 
 const PostsPage = () => {
+    // 게시글 상태 추가
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    // 마운트 시
     useEffect(() => {
+        // 게시글 목록 불러오기
+        // axios.get(api주소).then(() => {}).catch(() => {})
         axios
             .get('/api/posts')
             .then((res) => {
@@ -16,28 +21,33 @@ const PostsPage = () => {
                 setLoading(false);
             })
             .catch((err) => {
-                console.log(err);
+                console.error(err);
                 setLoading(false);
             });
     }, []);
 
-    if (loading === true) {
+    // 로딩 중
+    if (loading) {
         return <div>로딩 중...</div>;
     }
-    if (!posts) return <div>게시글을 찾을 수 없습니다</div>;
+
     return (
-        <div>
-            <h2>블로그 목록</h2>
-            <Link href="/posts/write" className="block w-14 h-14 rounded-full bg-gray-500">
-                <span className="sr-only">글쓰기</span>
-            </Link>
-            {posts.map((post) => (
-                <Link key={post.id} href={`/posts/${post.id}`} className="container mx-auto my-5 block">
-                    <h3 className="text-2xl mb-2">{post.title}</h3>
-                    <p className="text-md mb-5">{post.content}</p>
-                    <span className="text-sm text-gray-500">{post.createdAt}</span>
+        <div className="container mx-auto py-10">
+            <div className="flex justify-between items-center">
+                <h2 className="text-6xl font-black">블로그 목록</h2>
+                <Link href={'/posts/write'} className="p-5 bg-purple-400 text-white rounded-lg">
+                    글쓰기
                 </Link>
-            ))}
+            </div>
+            <div className="divide-y divide-gray-300">
+                {posts.map((post) => (
+                    <Link key={post._id} href={`/posts/${post._id}`} className="flex flex-col gap-4 my-5 pt-10 py-5">
+                        <h3 className="text-4xl font-semibold">{post.title}</h3>
+                        <p className="text-xl">{post.content}</p>
+                        <span className="text-gray-400">{formatDate(post.createdAt)}</span>
+                    </Link>
+                ))}
+            </div>
         </div>
     );
 };
